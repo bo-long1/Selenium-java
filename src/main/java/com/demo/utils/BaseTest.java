@@ -25,8 +25,8 @@ import com.demo.report.TestListener;
 import com.demo.report.ReportListener;
 import com.demo.report.AllureManager;
 
-//@Listeners({ExtentITestListenerClassAdapter.class, ReportListener.class})
-@Listeners({TestListener.class})
+@Listeners({ExtentITestListenerClassAdapter.class, ReportListener.class})
+//@Listeners({TestListener.class})
 public abstract class BaseTest {
 
     //protected static WebDriver driver;

@@ -16,7 +16,7 @@ import com.aventstack.extentreports.Status;
 import com.demo.config.Constants;
 import com.demo.driver.LaunchBrowser;
 
-public class ExtentTestMannager {
+public class ExtentTestManager {
         static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
     static ExtentReports extent = ExtentManager.getExtentReports();
 
@@ -38,14 +38,16 @@ public class ExtentTestMannager {
     public static void addScreenShot(String message) throws IOException {
         String base64Image = "data:image/png;base64,"
                 + ((TakesScreenshot) LaunchBrowser.getDriver("")).getScreenshotAs(OutputType.BASE64);
-        getTest().log(Status.INFO, message,        MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
+        getTest().log(Status.INFO, message,        
+        MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
     }
 
     public static void addScreenShot(Status status, String message) throws IOException {
 
         String base64Image = "data:image/png;base64,"
                 + ((TakesScreenshot) LaunchBrowser.getDriver("")).getScreenshotAs(OutputType.BASE64);
-        getTest().log(status, message,               MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
+        getTest().log(status, message,               
+        MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
     }
 
     public static void logMessage(String message) {

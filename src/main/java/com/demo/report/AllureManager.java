@@ -44,4 +44,7 @@ public class AllureManager {
         return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(BYTES);
     }
 
+    public static void saveScreenshotPNG() {
+    }
+
 }

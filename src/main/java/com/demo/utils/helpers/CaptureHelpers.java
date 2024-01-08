@@ -11,7 +11,7 @@ import org.testng.Reporter;
 import org.openqa.selenium.OutputType;
 
 public class CaptureHelpers {
-        //Lấy đường dẫn đến project hiện tại
+    //Lấy đường dẫn đến project hiện tại
     static String projectPath = System.getProperty("user.dir") + "/";
     //Tạo format ngày giờ để xíu gắn dô cái name của screenshot hoặc record video
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
@@ -36,6 +36,9 @@ public class CaptureHelpers {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
+    }
+
+    public static void captureScreenshot(Object driver, String name, String testName) {
     }
     
 }

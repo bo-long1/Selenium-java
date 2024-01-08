@@ -1,14 +1,19 @@
 package com.demo.report;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.aventstack.extentreports.service.ExtentTestManager;
+import com.aventstack.extentreports.Status;
 /*** Import modules from Selenium Base ***/
 import com.demo.report.AllureManager;
+import com.demo.utils.extentreports.ExtentTestManager;
+import com.demo.utils.helpers.CaptureHelpers;
 
 public class TestListener implements ITestListener {
 
@@ -52,15 +57,24 @@ public class TestListener implements ITestListener {
 
     // @Override
     // public void onTestFailure(ITestResult result) {
-    //     LogUtils.error("Test case " + result.getName() + " is failed.");
+    //    // LogUtils.error("Test case " + result.getName() + " is failed.");
     //     //Screenshot khi fail
-    //     CaptureHelper.captureScreenshot(result.getName());
-    //     LogUtils.error(result.getThrowable().toString());
+    //     CaptureHelpers.captureScreenshot(null, "", "");
+    //     //LogUtils.error(result.getThrowable().toString());
 
     //     //Extent Report
-    //     ExtentTestManager.addScreenShot(result.getName());
+    //     try {
+    //         ExtentTestManager.addScreenShot(null);
+    //     } catch (IOException e) {
+    //         // TODO Auto-generated catch block
+    //         e.printStackTrace();
+    //     }
+    //     //ExtentTestManager.addScreenShot(Status.FAIL, getName());
+
     //     ExtentTestManager.logMessage(Status.FAIL, result.getThrowable().toString());
     //     ExtentTestManager.logMessage(Status.FAIL, result.getName() + " is failed.");
+    //     logger.error(result.getTestClass().getName());
+    //     logger.error(result.getThrowable());
 
     //     //Allure Report
     //     AllureManager.saveTextLog(result.getName() + " is failed.");
@@ -75,7 +89,6 @@ public class TestListener implements ITestListener {
     private void reportPrint() {
         AllureManager.takeScreenshotToAttachOnAllureReport();
     }
-    
     
 }
 
