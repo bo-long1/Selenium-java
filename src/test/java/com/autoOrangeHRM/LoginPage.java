@@ -1,4 +1,4 @@
-package com.demo.autoOrangeHRM;
+package com.autoOrangeHRM;
 
 import com.demo.page.autoOrangeHRM.loginPage;
 import com.demo.utils.BaseTest;

@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Listeners;
@@ -29,15 +31,14 @@ public abstract class BaseTest {
     //     return driver;
     // }
 
-    @BeforeMethod
+    @BeforeTest
     @Parameters(value={"browser"})
     public void preCondition(@Optional(Constants.BROWSER_TYPE) String browser) {
-
         WebDriver driver = LaunchBrowser.getDriver(browser);
         DriverManager.setDriver(driver);
     }
 
-    @AfterMethod
+    @AfterTest
     public void postCondition(){
         // Quit the Browser
         DriverManager.quit();

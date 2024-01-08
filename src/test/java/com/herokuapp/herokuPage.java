@@ -1,4 +1,4 @@
-package herokuapp;
+package com.herokuapp;
 
 import com.demo.driver.DriverManager;
 import com.demo.page.Herokuapp.homePage;

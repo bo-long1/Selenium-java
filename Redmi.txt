@@ -1,0 +1,4 @@
+cmd clean & install mvn
+  + mvn clean install -DskipTests or mvn clean package -DskipTests
+cmd run test:
+  + mvn clean test -Dtest=com.herokuapp.herokuPage

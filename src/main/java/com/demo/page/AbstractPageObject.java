@@ -5,11 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebDriver;
 import com.demo.utils.BaseTest;
+
+import io.qameta.allure.Step;
+
+import com.demo.config.Constants;
 import com.demo.driver.DriverManager;
 
 public class AbstractPageObject {
-
-    //public WebDriver driver;
 
     //*********Constructor*********
     protected AbstractPageObject() {
@@ -17,8 +19,13 @@ public class AbstractPageObject {
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
-    public void clickLink(String text){
-        WebElement element = DriverManager.getDriver().findElement(By.xpath("//li/a[text()='"+ text +"']"));
-        element.click();
+    // public void clickLink(String text){
+    //     WebElement element = DriverManager.getDriver().findElement(By.xpath("//li/a[text()='"+ text +"']"));
+    //     element.click();
+    // }
+
+    @Step
+    public void openWebsite() {
+        DriverManager.getDriver().get(Constants.Url_herokuapp);
     }
 }

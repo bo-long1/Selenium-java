@@ -1,6 +1,9 @@
 package com.demo.page.Herokuapp;
 
+import com.demo.config.Constants;
 import com.demo.driver.DriverManager;
+import com.demo.page.AbstractPageObject;
+
 import io.qameta.allure.Step;
 import lombok.experimental.Helper;
 import org.openqa.selenium.WebElement;
@@ -9,7 +12,7 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class homePage extends openPage{
+public class homePage extends AbstractPageObject{
     @FindBy(css = "[href='/abtest']")
     private WebElement a_btesting;
 
@@ -36,6 +39,7 @@ public class homePage extends openPage{
         openWebsite();
         a_btesting.click();
     }
+    
     @Step
     public void clickAddElements() {
         linkAddElemens.click();
