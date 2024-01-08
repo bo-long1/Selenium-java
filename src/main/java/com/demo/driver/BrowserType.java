@@ -23,12 +23,12 @@ public enum BrowserType {
         @Override
         public WebDriver createDriver() {
             // Chromedriver path
-//            driverPath = System.getProperty("user.dir") + File.separator +
-//            "src/main/resources/WebDrivers/chromedriver.exe";
-//            ChromeOptions options = new ChromeOptions();
-//            System.setProperty("webdriver.chrome.driver", driverPath);
-//            driver = new ChromeDriver(options);
-            WebDriverManager.chromedriver().setup();
+           driverPath = System.getProperty("user.dir") + File.separator +
+           "src/main/resources/WebDrivers/chromedriver.exe";
+           ChromeOptions options = new ChromeOptions();
+           System.setProperty("webdriver.chrome.driver", driverPath);
+           driver = new ChromeDriver(options);
+            //WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             // Maximize the browser
             driver.manage().window().maximize();
