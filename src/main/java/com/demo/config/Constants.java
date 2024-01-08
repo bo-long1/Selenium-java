@@ -27,7 +27,7 @@ public final class Constants {
     /**
      * Initial URL
      */
-    public static String Url_OrangeHRM = "https://opensource-demo.orangehrmlive.com/";
+   // public static String Url_OrangeHRM = "https://opensource-demo.orangehrmlive.com/";
     public static String Url_herokuapp = "https://the-internet.herokuapp.com/";
 
 }

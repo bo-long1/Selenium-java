@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class homePage extends AbstractPageObject{
-    @FindBy(css = "[href='/abtest']")
+    @FindBy(css = "[href='/abtest'1]")
     private WebElement a_btesting;
 
     @FindBy(xpath = "(//a[normalize-space()='Add/Remove Elements'])[1]")

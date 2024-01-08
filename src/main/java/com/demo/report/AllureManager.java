@@ -33,7 +33,12 @@ public class AllureManager {
                         build(), System.getProperty("user.dir")
                         + "/target/allure-results/");
     }
-
+    //Text attachments for Allure
+    @Attachment(value = "{0}", type = "text/plain")
+    public static String saveTextLog(String message) {
+        return message;
+    }
+    //Screenshot attachments for Allure
     @Attachment(value = "Screenshot", type = "image/png")
     public static byte[] takeScreenshotToAttachOnAllureReport() {
         return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(BYTES);

@@ -29,7 +29,7 @@ public enum BrowserType {
            System.setProperty("webdriver.chrome.driver", driverPath);
            driver = new ChromeDriver(options);
             //WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
             // Maximize the browser
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
