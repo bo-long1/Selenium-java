@@ -12,8 +12,7 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.Status;
 /*** Import modules from Selenium Base ***/
 import com.demo.report.AllureManager;
-import com.demo.utils.extentreports.ExtentTestManager;
-import com.demo.utils.helpers.CaptureHelpers;
+
 
 public class TestListener implements ITestListener {
 
