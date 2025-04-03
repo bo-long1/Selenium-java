@@ -13,14 +13,22 @@ import com.demo.driver.DriverManager;
 
 public class AbstractPageObject {
 
+    protected static WebDriver driver; // Declare driver as protected
+
+    public AbstractPageObject(WebDriver driver) {
+        this.driver = driver; // Initialize driver in the constructor
+        PageFactory.initElements(driver, this); // Initialize PageFactory elements
+    }
+
     //*********Constructor*********
     protected AbstractPageObject() {
-        //this.driver = DriverManager.getDriver();
+        this.driver = DriverManager.getDriver();
+        
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
     @Step
     public void openWebsite() {
-        DriverManager.getDriver().get(Constants.Url_herokuapp);
+        DriverManager.getDriver().get(Constants.Url);
     }
 }

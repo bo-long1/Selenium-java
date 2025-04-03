@@ -10,7 +10,7 @@ public class LoginPage extends BaseTest {
 
     @Test(priority = 1)
     public void singIn() throws Exception {
-        loginPage singinPage = new loginPage();
+        loginPage singinPage = new loginPage(driver);
         singinPage.login("Admin", "admin123");
     }
 

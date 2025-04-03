@@ -1,6 +1,9 @@
 package com.demo.page.autoOrangeHRM;
 
 import io.qameta.allure.Step;
+
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,13 +23,17 @@ public class loginPage extends AbstractPageObject{
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement btnLogin;
 
-    WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 10);
-    public WebDriver driver;
+
+    public loginPage(WebDriver driver) {
+        super(driver);
+    }
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
     @Step
     public String getTitlePage() {
         openWebsite();
-        this.driver.getTitle();
-        return getTitlePage();
+        return AbstractPageObject.driver.getTitle();
     }
 
     public void enterUsername(String username) {

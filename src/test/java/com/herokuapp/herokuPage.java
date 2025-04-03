@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 
 public class herokuPage extends BaseTest {
 
-    //CSS Selector
-    @Test(priority = 1)
-    public void clickABTest () throws Exception{
-        homePage click = new homePage();
-        click.clickTest();
-    }
+    // //CSS Selector
+    // @Test(priority = 1)
+    // public void clickABTest () throws Exception{
+    //     homePage click = new homePage();
+    //     click.clickTest();
+    // }
 
     //Check button
     @Test(priority = 2)

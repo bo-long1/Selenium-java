@@ -1,8 +1,7 @@
 package com.demo.driver;
 
 import org.openqa.selenium.WebDriver;
-
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class LaunchBrowser {
     static WebDriver driver;
@@ -10,7 +9,7 @@ public class LaunchBrowser {
     public static WebDriver getDriver(String browser) {
 
         driver = BrowserType.valueOf(browser.toUpperCase()).createDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Use Duration-based API
         return driver;
         
     }

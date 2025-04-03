@@ -35,7 +35,7 @@ public abstract class BaseTest {
     //     return driver;
     // }
 
-    private WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeTest
     @Parameters(value={"browser"})
@@ -74,7 +74,7 @@ public abstract class BaseTest {
     @AfterTest
     public void postCondition() throws Exception{
         // Quit the Browser
-        Thread.sleep(1000);
+        Thread.sleep(100);
         DriverManager.quit();
     }
 }

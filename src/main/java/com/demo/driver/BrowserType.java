@@ -18,31 +18,31 @@ import org.openqa.selenium.remote.CapabilityType;
 import java.io.File;
 import java.net.URL;
 
-public enum BrowserType { 
+public enum BrowserType {
     CHROME("Chrome") {
         @Override
         public WebDriver createDriver() {
             // Chromedriver path
-           driverPath = System.getProperty("user.dir") + File.separator +
-           "src/main/resources/WebDrivers/chromedriver.exe";
-           ChromeOptions options = new ChromeOptions();
-           System.setProperty("webdriver.chrome.driver", driverPath);
-           driver = new ChromeDriver(options);
+            driverPath = System.getProperty("user.dir") + File.separator +
+                    "src/main/resources/WebDrivers/chromedriver.exe";
+            ChromeOptions options = new ChromeOptions();
+            System.setProperty("webdriver.chrome.driver", driverPath);
+            driver = new ChromeDriver(options);
             //WebDriverManager.chromedriver().setup();
             //driver = new ChromeDriver();
             // Maximize the browser
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
-             return driver;
+            return driver;
         }
 
         @Override
         public WebDriver createRemoteDriver() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             ChromeOptions options = new ChromeOptions();
-            
+
             capabilities.setCapability(CapabilityType.BROWSER_NAME, "chrome");
-            capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+            //capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
@@ -54,10 +54,10 @@ public enum BrowserType {
     EDGE("Edge") {
         @Override
         public WebDriver createDriver() {
-//            driverPath = "src/main/resources/WebDrivers/msedgedriver.exe";
-//            EdgeOptions options = new EdgeOptions();
-//            System.setProperty("webdriver.edge.driver", driverPath);
-//            driver = new EdgeDriver(options);
+            // driverPath = "src/main/resources/WebDrivers/msedgedriver.exe";
+            // EdgeOptions options = new EdgeOptions();
+            // System.setProperty("webdriver.edge.driver", driverPath);
+            // driver = new EdgeDriver(options);
             WebDriverManager.edgedriver().setup();
             driver = new ChromeDriver();
             // Maximize the browser
@@ -70,9 +70,9 @@ public enum BrowserType {
         public WebDriver createRemoteDriver() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             EdgeOptions options = new EdgeOptions();
-            
+
             capabilities.setCapability(CapabilityType.BROWSER_NAME, "MicrosoftEdge");
-            capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+            //capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
@@ -85,10 +85,10 @@ public enum BrowserType {
     FIREFOX("Firefox") {
         @Override
         public WebDriver createDriver() {
-//            driverPath = "src/main/resources/WebDrivers/geckodriver.exe";
-//            FirefoxOptions options = new FirefoxOptions();
-//            System.setProperty("webdriver.gecko.driver", driverPath);
-//            driver = new FirefoxDriver(options);
+            // driverPath = "src/main/resources/WebDrivers/geckodriver.exe";
+            // FirefoxOptions options = new FirefoxOptions();
+            // System.setProperty("webdriver.gecko.driver", driverPath);
+            // driver = new FirefoxDriver(options);
             WebDriverManager.firefoxdriver().setup();
             // Maximize the browser
             driver.manage().window().maximize();
