@@ -1,10 +1,7 @@
 package com.demo.page;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebDriver;
-import com.demo.utils.BaseTest;
 
 import io.qameta.allure.Step;
 

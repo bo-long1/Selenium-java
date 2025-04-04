@@ -18,16 +18,16 @@
         <scripts>
             <![CDATA[
 
- $(document).ready(function() {
+    $(document).ready(function() {
 
- });
+    });
 ]]>
         </scripts>
         <!--  custom styles  -->
         <styles>
             <![CDATA[
 
- ]]>
+    ]]>
         </styles>
     </configuration>
 </extentreports>

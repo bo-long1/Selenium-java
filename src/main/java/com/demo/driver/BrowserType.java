@@ -28,9 +28,8 @@ public enum BrowserType {
             ChromeOptions options = new ChromeOptions();
             System.setProperty("webdriver.chrome.driver", driverPath);
             driver = new ChromeDriver(options);
-            //WebDriverManager.chromedriver().setup();
-            //driver = new ChromeDriver();
-            // Maximize the browser
+            // WebDriverManager.chromedriver().driverVersion().setup(); // Replace with the latest compatible version
+            // driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
             return driver;
@@ -40,7 +39,9 @@ public enum BrowserType {
         public WebDriver createRemoteDriver() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             ChromeOptions options = new ChromeOptions();
-
+            options.addArguments("--disable-notifications");
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-popup-blocking");
             capabilities.setCapability(CapabilityType.BROWSER_NAME, "chrome");
             //capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
@@ -70,11 +71,11 @@ public enum BrowserType {
         public WebDriver createRemoteDriver() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             EdgeOptions options = new EdgeOptions();
-
+            options.addArguments("--disable-notifications");
             capabilities.setCapability(CapabilityType.BROWSER_NAME, "MicrosoftEdge");
             //capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+            capabilities.setCapability(EdgeOptions.CAPABILITY, options);
 
             driver = rWebDriver(capabilities);
 

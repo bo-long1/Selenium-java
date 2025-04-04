@@ -29,12 +29,6 @@ import com.demo.report.AllureManager;
 //@Listeners({TestListener.class})
 public abstract class BaseTest {
 
-    //protected static WebDriver driver;
-
-    // public static WebDriver getDriver() {
-    //     return driver;
-    // }
-
     protected WebDriver driver;
 
     @BeforeTest
@@ -50,7 +44,6 @@ public abstract class BaseTest {
         Thread.sleep(1000);
         //Khởi tạo đối tượng result thuộc ITestResult để lấy trạng thái và tên của từng Test Case
         //Ở đây sẽ so sánh điều kiện nếu testcase passed hoặc failed
-        //passed = SUCCESS và failed = FAILURE
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
                 // Tạo tham chiếu của TakesScreenshot
@@ -74,7 +67,7 @@ public abstract class BaseTest {
     @AfterTest
     public void postCondition() throws Exception{
         // Quit the Browser
-        Thread.sleep(100);
+        Thread.sleep(1000);
         DriverManager.quit();
     }
 }

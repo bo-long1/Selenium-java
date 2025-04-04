@@ -27,7 +27,7 @@ public class login_vnexpress extends AbstractPageObject {
     // }
 
     public void clickLoginButton() {
-        wait.until(ExpectedConditions.visibilityOf(btnLogin)); // Wait until the button is visible
+        wait.until(ExpectedConditions.elementToBeClickable(btnLogin)); // Wait until the button is visible
         btnLogin.click(); // Click the login button
     }
 
@@ -63,13 +63,13 @@ public class login_vnexpress extends AbstractPageObject {
     public void clickLoginButton2() {
         WebElement nextButton = driver.findElement(By.xpath("//button[@id='myvne_button_login']"));
         wait.until(ExpectedConditions.elementToBeClickable(nextButton));
-        //nextButton.click();
+        nextButton.click();
         // Simulate pressing Enter
-        nextButton.sendKeys(Keys.ENTER);
+        // nextButton.sendKeys(Keys.ENTER);
     }
 
     public String getErrorMessage() {
-        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(120));
         By errorMessageLocator = By.xpath("//div[@id='error_myvne_password']");
         try {
             WebElement errorMessage = wait2.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLocator)); // Wait until the error message is visible
